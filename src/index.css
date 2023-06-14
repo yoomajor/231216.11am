@@ -1,13 +1,123 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+/* reset & common */
+* {
+	margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font: inherit;
+}
+fieldset,
+img {
+	border: none;
+}
+dl,
+ul,
+ol,
+menu,
+li {
+	list-style: none;
+}
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+sub,
+sup {
+	font-size: inherit;
+	vertical-align: unset;
+}
+input,
+select,
+textarea,
+button {
+	vertical-align: middle;
+}
+input::-ms-clear {
+	display: none;
+}
+button {
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+a:hover,
+a:focus,
+a:active,
+a:visited {
+	text-decoration: none;
+}
+:focus {
+	outline: none;
+}
+header,
+footer,
+menu,
+nav,
+aside,
+main,
+section,
+article {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+img {
+	max-width: 100%;
+	vertical-align: middle;
+}
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border: none;
+}
+th {
+	font-weight: inherit;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+var,
+i,
+cite,
+em,
+address,
+dfn,
+button,
+input,
+select,
+textarea,
+pre {
+	font: inherit;
+	color: inherit;
+}
+textarea {
+	resize: vertical;
+}
+input {
+	-webkit-appearance: none;
+	border-radius: 0;
+}
+input[type="password"] {
+	font-family: sans-serif;
 }
