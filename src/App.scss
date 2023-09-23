@@ -11,13 +11,13 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
   overflow: hidden;
   &.full {
     min-height: 100vh;
   }
   .title {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     font-size: 18px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -31,10 +31,26 @@ body {
 }
 
 // intro
+@keyframes walking {
+  0% {background-position: 0 0;}
+  100% {background-position: -672px 0;}
+}
+@keyframes bg1 {
+  0% {background-position: 0;}
+  100% {background-position: -380px 0;}
+}
+@keyframes bg2 {
+  0% {background-position: 0;}
+  100% {background-position: -547px 0;}
+}
+@keyframes bg3 {
+  0% {background-position: 0;}
+  100% {background-position: -536px 0;}
+}
 .intro {
   position: relative;
   height: 100%;
-  padding: 30px 0;
+  padding: 60px 0;
   color: #afa2b3;
   // border: 8px solid #d2d2e7;
   // background: url('./images/flower_bottom.png') 50% 0 / auto 48px no-repeat, url('./images/flower_top.png') 50% 100% / auto 48px no-repeat;
@@ -61,17 +77,16 @@ body {
     line-height: 1.5;
     letter-spacing: 0.1em;
     word-spacing: 0.2em;
-    font-size: 14px;
   }
   .visual {
     position: relative;
-    width: 280px;
-    height: 340px;
+    width: 100%;
+    height: 300px;
     margin: 0 auto;
     overflow: hidden;
-    border-radius: 100% 100% 0 0;
-    border: 4px solid #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    // border-radius: 100% 100% 0 0;
+    // border: 4px solid #fff;
+    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     // border: 1px solid #cdcddf;
   }
   .layer {
@@ -81,24 +96,34 @@ body {
     width: 100%;
     background-position: 100% 0;
     background-size: auto 100%;
-    background-repeat: no-repeat;
     background-repeat: repeat-x;
   }
   .layer1 {
     height: 122px;
     background-image: url('./images/visual_layer_1.png');
     z-index: 3;
+    animation: bg1 8s linear infinite;
   }
   .layer2 {
     height: 55px;
     background-image: url('./images/visual_layer_2.png');
     z-index: 2;
+    animation: bg2 24s linear infinite;
   }
   .layer3 {
     height: 77px;
     background-image: url('./images/visual_layer_3.png');
     opacity: 0.5;
     z-index: 1;
+    animation: bg3 36s linear infinite;
+  }
+  .layer4 {
+    left: 50%;
+    width: 112px;
+    height: 156px;
+    background: url('https://i.imgur.com/ifk0SLH.png') 100% 0 / auto 100% no-repeat;
+    z-index: 4;
+    animation: walking 1s steps(6) infinite;
   }
 }
 .snowFall {
@@ -124,10 +149,71 @@ body {
 	}
 }
 
+// entrance
+.test1 {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  font-size: 48px;
+}
+.test2 {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  background-color: skyblue;
+}
+
+.entrance {
+  display: block;
+  position: relative;
+  overflow: initial;
+  padding: 0;
+  font-size: 24px;
+  color: #656565;
+  .inner {
+    width: 100%;
+    height: 240vh;
+  }
+  .bg {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    border: 20px solid pink;
+  }
+  .messageBox {
+    margin-top: -100vh;
+    .message1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100vh;
+      .messageUnit:after {
+        content: "-";
+        display: block;
+        margin: 8px 0;
+      }
+    }
+    .message2 {
+      margin-bottom: 50vh;
+      font-size: 16px;
+    }
+    .message3 {
+      .line {
+        width: 1px;
+        height: 40px;
+        margin: 16px auto;
+        background-color: #c0c0c0;
+      }
+    }
+  }
+}
+
 // invitation
 .greeting {
   line-height: 1.8;
-  background: #f5f4f9 url('./images/greeting_flower.png') 0 0 / auto 80px no-repeat;
+  background: #f5f4f9 url('./images/flower_bottom.png') calc(50% - 260px) 0 / auto 90px no-repeat;
 }
 
 // calendar
@@ -193,8 +279,9 @@ body {
         margin-left: -0.5em;
         font-size: 42px;
         font-family: sans-serif;
-        color: #ffdbdb;
-        animation: pulse 2s ease infinite forwards;
+        color: #ffc9c9;
+        text-shadow: 0 0 10px rgba(#ffc9c9, 0.8);
+        animation: pulse 2.5s ease infinite forwards;
       }
       &:after {
         content: "오전 11시";
@@ -214,9 +301,9 @@ body {
   }
 }
 @keyframes pulse {
-  20% { transform: scale(1); }
-  50% { transform: scale(1.08); }
-  80% { transform: scale(1); }
+  10% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+  90% { transform: scale(1); }
 }
 
 .mapInfo {

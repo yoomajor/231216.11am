@@ -12,7 +12,7 @@ export default function Map (props) {
     const location = new naver.maps.LatLng(37.5076895, 127.0603667);
     const mapOptions = {
       center: location,
-      zoom: 15,
+      zoom: 16,
       zoomControl: true,
       zoomControlOptions: {
         position: naver.maps.Position.TOP_LEFT,

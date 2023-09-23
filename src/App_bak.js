@@ -1,19 +1,35 @@
-import { useEffect, useState } from "react"
-import Entrance from './Entrance'
-import Gallery from './Gallery'
-import Calendar from './Calendar'
-import Map from './Map'
-import './App.scss'
+import { useEffect, useState } from "react";
+import dayjs from "dayjs";
+import Gallery from './Gallery';
+import Calendar from './Calendar';
+import Map from './Map';
+import './App.scss';
 
 function App() {
-  const expired = '2023-12-16'
+  const today = dayjs();
+  const expired = '2023-12-16';
+  const diff = dayjs(expired).diff(today, 'day', true);
+  const dday = Math.floor(diff)
+
+  function createSnow () {
+    const snow = document.createElement('i');
+    snow.classList.add('snow');
+    snow.style.left = Math.random() * window.innerWidth + 'px';
+    snow.style.animationDirection = Math.random() * 3 + 3 + 's';
+    snow.style.opacity = (Math.random() * 0.7) + 0.3;
+    snow.style.fontSize = Math.random() * 10 + 5 + 'px';
+  
+    document.querySelector('.snowFall').appendChild(snow);
+  
+    setTimeout(() => {
+        snow.remove();
+    }, 10000);
+  }
+
+  setInterval(createSnow, 100);
 
   return (
     <div className="App">
-      <section className="section entrance">
-        <Entrance />
-      </section>
-      {/*
       <section className="section intro full">
         <header className="serif">
           <h1>결혼합니다</h1>
@@ -23,7 +39,6 @@ function App() {
             <div className="layer layer1"></div>
             <div className="layer layer2"></div>
             <div className="layer layer3"></div>
-            <div className="layer layer4"></div>
           </div>
           <h2>원동민 · 유주아</h2>
           <div className="info">
@@ -31,7 +46,6 @@ function App() {
           </div>
         </header>
       </section>
-      */}
       <section className="section greeting serif">
         <h1 className="title">Invitation</h1>
         <div className="poem">
