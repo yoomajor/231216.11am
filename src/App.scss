@@ -11,13 +11,13 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 80px 20px;
+  padding: 120px 20px;
   overflow: hidden;
   &.full {
     min-height: 100vh;
   }
   .title {
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     font-size: 18px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
@@ -163,6 +163,17 @@ body {
   background-color: skyblue;
 }
 
+@keyframes entrance-gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
 .entrance {
   display: block;
   position: relative;
@@ -170,56 +181,234 @@ body {
   padding: 0;
   font-size: 24px;
   color: #656565;
+  animation: entrance-gradient 5s ease infinite;
+  background: linear-gradient(-45deg,rgba(255, 221, 211, 0.7),rgba(255, 219, 233, 0.7),rgba(216, 245, 255, 0.7),rgba(204, 255, 238, 0.7));
+  background-size: 400% 400%;
+  transition: all 0.3s;
+  // &:before {
+  //   content: "";
+  //   position: absolute;
+  //   top: 50vh;
+  //   left: -100vw;
+  //   width: 200vw;
+  //   height: 200vw;
+  //   background: linear-gradient(260deg, rgba(255, 182, 182, 0.5), rgba(228, 190, 255, 0.75));
+  //   opacity: 0.5;
+  //   transform: rotate(45deg);
+  // }
   .inner {
     width: 100%;
-    height: 240vh;
+    height: 180vh;
   }
   .bg {
     position: sticky;
     top: 0;
     width: 100%;
     height: 100vh;
-    border: 20px solid pink;
+    overflow: hidden;
+    // background: url('./images/entrance_bg.png') 50% 100% / auto 380px no-repeat;
+    z-index: 9;
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: -50vw;
+      left: -50vw;
+      width: 200vw;
+      height: 100vw;
+      background: linear-gradient(260deg, rgba(255, 182, 182, 0.5), rgba(228, 190, 255, 0.75));
+      opacity: 0.5;
+      transform: rotate(30deg);
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: url('./images/entrance_1.png') 50% 100% / 320px auto no-repeat;
+      transition: all 0.5s;
+    }
+    &.scene2 {
+      &:after {
+        background-image: url('./images/entrance_2.png');
+      }
+    }
   }
   .messageBox {
     margin-top: -100vh;
+    font-size: 20px;
     .message1 {
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       height: 100vh;
-      .messageUnit:after {
-        content: "-";
-        display: block;
-        margin: 8px 0;
-      }
+      padding-bottom: 32vh;
+      background: url('./images/heart.png') 50% calc(50% - 16vh) / 320px auto no-repeat;
     }
-    .message2 {
-      margin-bottom: 50vh;
+    .date {
+      margin-bottom: 12px;
       font-size: 16px;
     }
-    .message3 {
+    .message2 {
       .line {
         width: 1px;
         height: 40px;
         margin: 16px auto;
-        background-color: #c0c0c0;
+        background-color: #d4d4d4;
       }
     }
   }
 }
 
+// entrance fireworks
+$particles: 40;
+$width: 500;
+$height: 500;
+
+// create the explosion
+$box-shadow: ();
+$box-shadow2: ();
+@for $i from 0 through $particles {
+  $box-shadow: $box-shadow,
+               random($width)-$width / 2 + px
+               random($height)-$height / 1.2 + px
+               hsl(random(360), 100, 50);
+  $box-shadow2: $box-shadow2, 0 0 #fff
+}
+@mixin keyframes ($animationName) {
+  @-webkit-keyframes #{$animationName} {
+      @content;
+  }
+
+  @-moz-keyframes #{$animationName} {
+      @content;
+  }
+
+  @-o-keyframes #{$animationName} {
+      @content;
+  }
+
+  @-ms-keyframes #{$animationName} {
+      @content;
+  }
+
+  @keyframes #{$animationName} {
+      @content;
+  }
+}
+
+@mixin animation-delay ($settings) {
+  -moz-animation-delay: $settings;
+  -webkit-animation-delay: $settings;
+  -o-animation-delay: $settings;
+  -ms-animation-delay: $settings;
+  animation-delay: $settings;
+}
+
+@mixin animation-duration ($settings) {
+  -moz-animation-duration: $settings;
+  -webkit-animation-duration: $settings;
+  -o-animation-duration: $settings;
+  -ms-animation-duration: $settings;
+  animation-duration: $settings;
+}
+
+@mixin animation ($settings) {
+  -moz-animation: $settings;
+  -webkit-animation: $settings;
+  -o-animation: $settings;
+  -ms-animation: $settings;
+  animation: $settings;
+}
+
+@mixin transform ($settings) {
+  transform: $settings;
+  -moz-transform: $settings;
+  -webkit-transform: $settings;
+  -o-transform: $settings;
+  -ms-transform: $settings;
+}
+.pyro {
+  opacity: 0.5;
+}
+.pyro > .before,
+.pyro > .after {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 100%;
+  box-shadow: $box-shadow2;
+  @include animation((1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards));
+}
+
+.pyro > .after {
+  @include animation-delay((1.25s, 1.25s, 1.25s));
+  @include animation-duration((1.25s, 1.25s, 6.25s));
+}
+
+@include keyframes(bang) {
+  to {
+    box-shadow: $box-shadow;
+  }
+}
+
+@include keyframes(gravity)  {
+  to {
+    @include transform(translateY(200px));
+    opacity: 0;
+  }
+}
+
+@include keyframes(position) {
+  0%, 19.9% {
+    margin-top: 10%;
+    margin-left: 40%;
+  }
+  20%, 39.9% {
+    margin-top: 40%;
+    margin-left: 30%;
+  }
+  40%, 59.9% {
+    margin-top: 20%;
+    margin-left: 70%
+  }
+  60%, 79.9% {
+    margin-top: 30%;
+    margin-left: 20%;
+  }
+  80%, 99.9% {
+    margin-top: 30%;
+    margin-left: 80%;
+  }
+}
+
+
 // invitation
 .greeting {
+  min-height: 80vh;
   line-height: 1.8;
-  background: #f5f4f9 url('./images/flower_bottom.png') calc(50% - 260px) 0 / auto 90px no-repeat;
+  border-top: 1px solid rgba(0,0,0,0.15);
+  background: url('./images/pattern1.png') 50% 50% / cover no-repeat;
+  box-shadow: 0px -20px 20px -20px rgba(0,0,0,0.2) inset, 0px 20px 20px -20px rgba(0,0,0,0.2) inset;
+}
+
+// gallery
+.gallery {
+  background: rgb(30,30,31);
+  background: linear-gradient(0deg, rgba(30,30,31,1) 0%, rgba(57,58,59,1) 100%);
+}
+.pswp-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 // calendar
 .dateInfo {
-  padding-top: 60px;
-  padding-bottom: 60px;
   background-color: #f3f1f7;
 }
 .calendar {

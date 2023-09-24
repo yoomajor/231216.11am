@@ -26,6 +26,6 @@ export default function Map (props) {
   }, []);
 
   return (
-    <div ref={mapElement} style={{ minHeight: '400px' }} className="map" />
+    <div ref={mapElement} style={{ minHeight: '520px' }} className="map" />
   );
 }
