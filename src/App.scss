@@ -185,17 +185,6 @@ body {
   background: linear-gradient(-45deg,rgba(255, 221, 211, 0.7),rgba(255, 219, 233, 0.7),rgba(216, 245, 255, 0.7),rgba(204, 255, 238, 0.7));
   background-size: 400% 400%;
   transition: all 0.3s;
-  // &:before {
-  //   content: "";
-  //   position: absolute;
-  //   top: 50vh;
-  //   left: -100vw;
-  //   width: 200vw;
-  //   height: 200vw;
-  //   background: linear-gradient(260deg, rgba(255, 182, 182, 0.5), rgba(228, 190, 255, 0.75));
-  //   opacity: 0.5;
-  //   transform: rotate(45deg);
-  // }
   .inner {
     width: 100%;
     height: 180vh;
@@ -211,33 +200,91 @@ body {
     &:before {
       content: "";
       position: absolute;
-      bottom: -50vw;
-      left: -50vw;
-      width: 200vw;
-      height: 100vw;
-      background: linear-gradient(260deg, rgba(255, 182, 182, 0.5), rgba(228, 190, 255, 0.75));
-      opacity: 0.5;
-      transform: rotate(30deg);
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      margin-bottom: -150vw;
+      border-width: 120vw;
+      border-style: solid;
+      border-color: transparent;
+      border-left-color: rgba(255, 182, 182, 0.25);
     }
     &:after {
       content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      margin-bottom: -150vw;
+      border-width: 120vw;
+      border-style: solid;
+      border-color: transparent;
+      border-right-color: rgba(182, 232, 255, 0.25);
+    }
+    .with {
       position: absolute;
       top: 0;
       right: 0;
       width: 100%;
       height: 100%;
       background: url('./images/entrance_1.png') 50% 100% / 320px auto no-repeat;
-      transition: all 0.5s;
+      z-index: 1;
     }
     &.scene2 {
-      &:after {
+      .with {
         background-image: url('./images/entrance_2.png');
+      }
+      &:before,
+      &:after {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 0;
+        border: none;
+        background: url('./images/flower_bottom_left.png') 0 100% / auto 260px no-repeat;
+        z-index: 2;
+      }
+      &:after {
+        background: url('./images/flower_bottom_right.png') 100% 100% / auto 260px no-repeat;
+      }
+      & + .messageBox {
+        &:before {
+          height: 40vh;
+        }
+        &:after {
+          top: 90vh;
+        }
       }
     }
   }
   .messageBox {
+    position: relative;
     margin-top: -100vh;
     font-size: 20px;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50vh;
+      left: 50%;
+      height: 6vh;
+      margin-left: -1px;
+      margin-top: 10px;
+      border-left: 2px dotted rgba(255,255,255,0.5);
+      transition: all 2s;
+    }
+    &:after {
+      content: "♥";
+      position: absolute;
+      top: 56vh;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 40px;
+      font-family: 'Noto Sans KR', sans-serif;
+      color: #ff8b9c;
+      transition: all 2s;
+    }
     .message1 {
       display: flex;
       align-items: center;
@@ -252,12 +299,11 @@ body {
       font-size: 16px;
     }
     .message2 {
-      .line {
-        width: 1px;
-        height: 40px;
-        margin: 16px auto;
-        background-color: #d4d4d4;
-      }
+      position: relative;
+      z-index: 1;
+    }
+    .dday {
+      margin-top: 12px;
     }
   }
 }

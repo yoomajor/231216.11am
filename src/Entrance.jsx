@@ -18,7 +18,6 @@ const Entrance = (props) => {
 	const animatedItem = {
 		date: useScrollRef('up', 1, 0),
 		message: useScrollRef('up', 1, 0.2),
-		line: useScrollRef('up', 1, 0.2),
 		dday: useScrollRef('up', 1, 0.2)
 	}
 
@@ -28,7 +27,9 @@ const Entrance = (props) => {
 
 	return (
 		<div ref={ref} className="inner serif">
-			<div className={'bg ' + bgClass}></div>
+			<div className={'bg ' + bgClass}>
+				<div className="with"></div>
+			</div>
 			<div className="messageBox">
 				<div className="message1">
 					<div className="date">2023년 12월 16일</div>
@@ -42,8 +43,7 @@ const Entrance = (props) => {
 						</div>
 						결혼합니다
 					</div>
-					<div className="line" {...animatedItem.line}></div>
-					<div {...animatedItem.dday}>D-{dday}</div>
+					<div className="dday" {...animatedItem.dday}>D - {dday}</div>
 				</div>
 			</div>
 		</div>
