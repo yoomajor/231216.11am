@@ -28,6 +28,18 @@ const Entrance = (props) => {
 	return (
 		<div ref={ref} className="inner serif">
 			<div className={'bg ' + bgClass}>
+				<div className="circles">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
 				<div className="with"></div>
 			</div>
 			<div className="messageBox">
