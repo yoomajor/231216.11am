@@ -44,7 +44,8 @@ const Entrance = (props) => {
 			</div>
 			<div className="messageBox">
 				<div className="message1">
-					<div className="date">2023년 12월 16일</div>
+					<div className="date">2023. 12. 16</div>
+					<div className="date">오전 11시</div>
 					<div className="messageUnit">원동민 · 유주아</div>
 				</div>
 				<div className="message2">

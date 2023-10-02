@@ -69,25 +69,6 @@ function App() {
       <section className="section entrance">
         <Entrance />
       </section>
-      {/*
-      <section className="section intro full">
-        <header className="serif">
-          <h1>결혼합니다</h1>
-          <div className="dday">D-{dday}</div>
-          <div className="visual">
-            <div className="snowFall"></div>
-            <div className="layer layer1"></div>
-            <div className="layer layer2"></div>
-            <div className="layer layer3"></div>
-            <div className="layer layer4"></div>
-          </div>
-          <h2>원동민 · 유주아</h2>
-          <div className="info">
-            2023.12.16 11:00<br />스카이뷰섬유센터 17F
-          </div>
-        </header>
-      </section>
-      */}
       <section className="section greeting serif">
         <h1 className="title">초대합니다</h1>
         <div className="poem">
@@ -101,21 +82,23 @@ function App() {
           </p>
         </div>
       </section>
-      <section className="section gallery">
-        <h1 className="title serif">사진첩</h1>
-        <Gallery
-          galleryID="wedding-gallery"
-          images={images}
-        />
-      </section>
-      <section className="section dateInfo">
-        <h1 className="title serif">달력</h1>
-        <Calendar expired={expired} />
-      </section>
-      <section className="section mapInfo">
-        <h1 className="title serif">오시는길</h1>
-        <Map />
-      </section>
+      <div className="contentWrap">
+        <div className="weddingInfo">2023년 12월 16일 오전 11시<br/>삼성역 스카이뷰컨벤션</div>
+        <section className="section gallery">
+          <h1 className="title serif">사진첩</h1>
+          <Gallery
+            galleryID="wedding-gallery"
+            images={images}
+          />
+        </section>
+        <section className="section dateInfo">
+          <h1 className="title serif">달력</h1>
+          <Calendar expired={expired} />
+        </section>
+        <section className="section mapInfo">
+          <Map />
+        </section>
+      </div>
     </div>
   );
 }
