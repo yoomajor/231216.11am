@@ -1,6 +1,5 @@
 import { useLayoutEffect, useRef, useState } from "react"
 import { useScroll } from "./useScroll"
-import { useScrollRef } from "./useScrollRef"
 import dayjs from "dayjs"
 
 const Entrance = (props) => {
@@ -15,31 +14,13 @@ const Entrance = (props) => {
   const dday = Math.floor(diff)
 	const bgClass = height - scrollY <= winHeight * 1.5 ? 'scene2' : 'scene1'
 
-	const animatedItem = {
-		date: useScrollRef('up', 1, 0),
-		message: useScrollRef('up', 1, 0.2),
-		dday: useScrollRef('up', 1, 0.2)
-	}
-
 	useLayoutEffect(() => {
 		setHeight(ref.current.offsetHeight)
 	}, [])
 
 	return (
-		<div ref={ref} className="inner serif">
-			<div className={'bg ' + bgClass}>
-				<div className="circles">
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
+		<div ref={ref} className={'inner serif ' + bgClass}>
+			<div className="bg">
 				<div className="with"></div>
 			</div>
 			<div className="messageBox">
@@ -49,14 +30,10 @@ const Entrance = (props) => {
 					<div className="messageUnit">원동민 · 유주아</div>
 				</div>
 				<div className="message2">
-					<div className="messageUnit" {...animatedItem.message}>
-						<div className="pyro">
-							<div className="before"></div>
-							<div className="after"></div>
-						</div>
-						결혼합니다
+					<div className="messageUnit">
+						<span className="messageBlock">결혼합니다</span>
 					</div>
-					<div className="dday" {...animatedItem.dday}>D - {dday}</div>
+					<div className="dday"><span className="messageBlock">D - {dday}</span></div>
 				</div>
 			</div>
 		</div>

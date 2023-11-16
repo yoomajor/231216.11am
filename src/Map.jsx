@@ -33,11 +33,15 @@ export default function Map (props) {
   return (
     <div>
       <h1 className="title serif">오시는길</h1>
-      <div ref={mapElement} style={{ minHeight: '520px' }} className="map" />
+      <div ref={mapElement} style={{ minHeight: '420px' }} className="map" />
       <div className="address">
         <span className="label">주소</span>
-        <p>서울특별시 강남구 테헤란로 518 섬유센터 17층 섬유센터 스카이뷰컨벤션</p>
+        <p>서울특별시 강남구 테헤란로 518 섬유센터 17층<br/>스카이뷰컨벤션</p>
         <button type="button" className="btn" onClick={copyAddress}>주소복사</button>
+      </div>
+      <div className="address">
+        <span className="label">식장 전화번호</span>
+        <p><a href="tel:025284098">02-528-4098</a></p>
       </div>
       <div className="address">
         <span className="label">길찾기</span>
@@ -53,7 +57,8 @@ export default function Map (props) {
       </div>
       <div className="address">
         <span className="label">대중교통</span>
-        <p><i>2</i>호선 삼성역 4번출구 도보 3분</p>
+        <p><strong>지하철</strong> <i>2</i>호선 삼성역 4번출구 도보 3분</p>
+        <p><strong>버스</strong> 한국무역센터.삼성역 정류장 하차<br/><span className="blue">146, 333, 341, 360, 8146, N13, N31, N61</span><br/><span className="green">2416, 4425</span><br/><span className="red">1100, 1700, 2000, 2000-1, 7007, 8001, M6450</span><br/><span className="green2">강남07(마을)</span></p>
       </div>
     </div>
   );
