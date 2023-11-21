@@ -1,0 +1,9 @@
+{
+  "short_name": "청첩장",
+  "name": "원동민유주아청첩장",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/wedding/static/css/main.950c688b.css",
+    "main.js": "/wedding/static/js/main.6ea0d40d.js",
+    "static/js/981.22e366ed.chunk.js": "/wedding/static/js/981.22e366ed.chunk.js",
+    "static/js/787.75973099.chunk.js": "/wedding/static/js/787.75973099.chunk.js",
+    "static/media/entrance_bg.png": "/wedding/static/media/entrance_bg.fe59b3034c5c38348b7e.png",
+    "static/media/bg_greeting.png": "/wedding/static/media/bg_greeting.fc34d1bf063a6ae36c10.png",
+    "static/media/pic_9.png": "/wedding/static/media/pic_9.a3b6df8cd573ecfe5da6.png",
+    "static/media/pic_6.png": "/wedding/static/media/pic_6.9ac63167ef200f42b86e.png",
+    "static/media/entrance_2.png": "/wedding/static/media/entrance_2.68352ad4c22a7a6177ef.png",
+    "static/media/pic_8.png": "/wedding/static/media/pic_8.405b9cd7cd91a9433895.png",
+    "static/media/entrance_1.png": "/wedding/static/media/entrance_1.dc0ba426dff379d5fcfa.png",
+    "static/media/pic_7.png": "/wedding/static/media/pic_7.a01177f3a67ac9563687.png",
+    "static/media/pic_3.png": "/wedding/static/media/pic_3.f483a8592d3c90e4b001.png",
+    "static/media/pic_1.png": "/wedding/static/media/pic_1.2d343c550efed9e7f2c0.png",
+    "static/media/heart.png": "/wedding/static/media/heart.c616454c85874a8d31e0.png",
+    "static/media/pic_2.png": "/wedding/static/media/pic_2.53d8c1ac3688cbbed1d5.png",
+    "static/media/pic_4.png": "/wedding/static/media/pic_4.4416aa800d834bb1224a.png",
+    "static/media/pic_5.png": "/wedding/static/media/pic_5.559686d116de3d5f31ac.png",
+    "static/media/thumb_6.png": "/wedding/static/media/thumb_6.4d38df5e9423456ac466.png",
+    "static/media/thumb_5.png": "/wedding/static/media/thumb_5.10c69c09beca07b2396b.png",
+    "static/media/thumb_1.png": "/wedding/static/media/thumb_1.4a117046bcdced68c27b.png",
+    "static/media/thumb_2.png": "/wedding/static/media/thumb_2.ef3abb97c15564544c01.png",
+    "static/media/thumb_3.png": "/wedding/static/media/thumb_3.cec2b1eae3aec75a434e.png",
+    "static/media/thumb_4.png": "/wedding/static/media/thumb_4.c62c74fdb156dafee98d.png",
+    "static/media/thumb_7.png": "/wedding/static/media/thumb_7.ed598e19d5294cb49990.png",
+    "static/media/thumb_9.png": "/wedding/static/media/thumb_9.b4ecb2a4950082c0267a.png",
+    "static/media/thumb_8.png": "/wedding/static/media/thumb_8.06bc3bdf2779850eb773.png",
+    "static/media/bg_greeting_top.png": "/wedding/static/media/bg_greeting_top.8a6b6a018f7a0da6c239.png",
+    "index.html": "/wedding/index.html",
+    "main.950c688b.css.map": "/wedding/static/css/main.950c688b.css.map",
+    "main.6ea0d40d.js.map": "/wedding/static/js/main.6ea0d40d.js.map",
+    "981.22e366ed.chunk.js.map": "/wedding/static/js/981.22e366ed.chunk.js.map",
+    "787.75973099.chunk.js.map": "/wedding/static/js/787.75973099.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.950c688b.css",
+    "static/js/main.6ea0d40d.js"
+  ]
+}
