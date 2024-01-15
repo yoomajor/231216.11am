@@ -33,7 +33,7 @@ const Entrance = (props) => {
 					<div className="messageUnit">
 						<span className="messageBlock">결혼합니다</span>
 					</div>
-					<div className="dday"><span className="messageBlock">D - {dday}</span></div>
+					<div className="dday"><span className="messageBlock">D {dday > 0 ? '+' : '-'}{dday}</span></div>
 				</div>
 			</div>
 		</div>
